@@ -15,13 +15,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-tests:
-  runs-on: ubuntu-22.04
-  needs: build # Test-Job wartet, bis der Build-Job erfolgreich ist
-  steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+  tests:
+    runs-on: ubuntu-22.04
+    needs: build # Test-Job wartet, bis der Build-Job erfolgreich ist
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Install dependencies and run Test
-      run: npm install
-  run: npm test
+      - name: Install dependencies and run Test
+        run: npm install
+    run: npm test
